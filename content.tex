@@ -1,120 +1,160 @@
-\section*{Abstract}
-In this paper we will study the magnetopause using real data from the Cluster satellites. We will identify the times that the satellite crossed the magnetopause, estimate the normal to the magnetopause and estimate the current density at the magnetopause. These results will be compared to ideal values and discussed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Assignment}
+\subsection{Overview}
+In this lab report we aim to learn and show some
+ of the basic functionality of SPENVIS and use this to gain information on and illustrate the plasma environment local to Earth. In the first assignment downloaded a file and looked through it to visually get a feel for the information it was showing. This
+ allowed us to use the physical knowledge we had to match real data to our expectations.
+ 
+ 
+\subsection{Results}
 
-\section*{Exercise 1}
-	In this exercise, example 2.1.1 was implemented using the magnetic field data that was provided. The equations below show the matrices D and V, where the diagonals of D are the eigenvalues and the columns of V are the corresponding eigenvectors.
-   \begin{multicols}{2}
-    \begin{equation}
-    	D =
-    	\begin{bmatrix}
-        	7.1 & 0 & 0 \\
-             0  & 137.9 & 0 \\
-             0  &  0 & 1012.9 \\
-         \end{bmatrix}
-     \end{equation}
-     
-     \begin{equation}
-         V =
-         \begin{bmatrix}
-         	0.8671 & 0.2886 & -0.4061 \\
-   			-0.4978 & 0.5326 & -0.6845 \\
-    		 0.0187 & 0.7957 & 0.6054 \\
-          \end{bmatrix}
-      \end{equation}
-    \end{multicols}
-Here, the smallest eigenvalue $\bf{e} = 7.1$ corresponds to $\bf{n} = [0.8671 -0.4978 -0.0187]$.
+Data was downloaded from \url{http://sidc.be/silso/datafiles} and \url{ftp://ftp.ngdc.noaa.gov/STP/GEOMAGNETIC_DATA/INDICES/KP_AP}, year 2003, and the data format was checked.
 
-\section*{Exercise 2}
-	Based on the Cluster data, the proton data and magnetic field data were plotted against time as seen below in \ref{fig:protdata} and \ref{fig:magdata}. The plasma beta was calculated according to the given formula \ref{eq:beta}.
-    
-    \begin{equation}
-    \beta = \frac{n (2T_{\bot} + T_{\parallel} ) * 0.5}{B^2 / (0.5 \mu_0)}
-    \label{eq:beta}
-    \end{equation}
 
-    
-    \begin{figure}[h!]
-    	\centering
-            \includegraphics[scale=0.6]{images/otherPlots.png}
-            \caption{Proton Data Variation over Time}
-            \label{fig:protdata}
+\subsection{Discussion}
+The data was separated into columns and using the
+ key provided in the lab report we were able to identify the flux qualifier, basic information (date) and the sunspot number. This is important as we can check for anomalies or use the format of the data to export and use the data in our own programs as necessary.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Assignment}
+\subsection{Overview}
+In this Assignment we modify the settings for the model IRI2001 with the data gathered in the previous task, and re-run the IRI2001 model.
+The results are then compared to the default case.
+\subsection{Results}
+
+%\begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=\linewidth]{images/E_number_density_plot1}	
+%	\caption{fig:ass2Plot1}
+%	\label{fig:ass2Plot1}
+%\end{figure}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=\linewidth]{images/E_number_density_plot2}	
+%	\caption{Electron number density Plot New}
+%	\label{fig:ass2Plot2}
+%\end{figure}
+
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{minipage}[b]{0.7\textwidth}
+    \includegraphics[width=\textwidth]{images/E_number_density_plot1}
+    \caption{Electron number density Plot Old}
+    \label{fig:ass2Plot1}
+  \end{minipage}
+  \vfill
+  \begin{minipage}[b]{0.7\textwidth}
+    \includegraphics[width=\textwidth]{images/E_number_density_plot2}
+    \caption{Electron number density Plot New}
+    \label{fig:ass2Plot2}
+  \end{minipage}
+\end{figure}
+
+\newpage
+\subsection{Discussion}
+For the default case, the number density is much lower at higher altitudes than it is for the corrected value, for example: at an altitude of approx. 500km the number density is around $10^{5.05}$, whereas for the latter case the number density at 500km is approx. $10^{5.2}$.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Assignment}
+\subsection{Overview}
+The model IRI2001 used in Assignment 1 is used again. The year shall stay the same, but other parameters as Day of Year, the daily $F_{10.7}$ and the 12 month average sunspot number are changed.
+\subsection{Results}
+We used the following values for the parameters to be changed
+%\todo{make a table here or something}
+
+\begin{itemize}
+	\item year 2003
+	\item SD:7.1
+	\item average sunspot number 99.3
+	\item selected day: 1
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{images/ass3plot1}	
+	\caption{Electron number density with standard deviation}
+	\label{fig:ass3Plot1}
+\end{figure}
+
+The sunspot number parameter has almost no effect at lower altitudes, however at approx. 250km the electron number density starts to vary. The lower the sunspot number the lower the electron number density at each respective altitude above 250km.
+%\todo{insert plot here km/e-}
+
+2. The electron number density varies on a diurnal basis, but only very minutely. 
+
+3. Comparing Winter and Summer (day 1 and day 181), the electron number density varies on a larger scale.
+\subsection{Discussion}
+These results have wider implications for satellites
+ in space. As the sunspot number varies the number density of electrons varies. This means that there is a changing electron flux as the spacecraft travels through space and the maxima and minima need to be accounted for in any physical specifications for the
+ electronics and material property analysis. There is also variation in both day and season. This also needs to be accounted for in estimations of maximum and minimum flux to ensure that a spacecraft does not unexpectedly fail due to the varying flux.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Assignment}
+\subsection{Overview}
+In this assignment we will study the ionosphere and
+ take into account the limitations and strengths of the IRI2001 model. By doing this we will gain insight into how models are used and ways we can modify them to account for the limiting factors.
+\subsection{Results}
+Since the given latitude and longitude are located in the auroral region, and 2003 was close to a maximum of the sun's 11-year cycle, the IRI2001 Model is not suitable as this is not magnetically-quite region.
+\subsection{Discussion}
+This assignment showed us how the models are only
+ suitable for certain conditions and real situations do not always meet the conditions required for the model. This may render the model only partially applicable or completely useless. By looking at the conditions in space we can decide how appropriate the
+ models are and explain any failures in the model. This will allow us to improve upon the model in later iterations of the model and this allows us to make better predictions of the space environment for the future.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Assignment}
+
+\subsection{Overview}
+For this assignment, the year 2012 was utilized  in order to determine the ionospheric layers. The corresponding day of the year, Daily $F_{10.7}$, and Sunspot Number were 270, 139.9, and 84.5, respectively. The coordinating grid was kept the same as previous assignments. The figure below diplays the number density of various particles and ions as the altitude is varied. 
+\newpage
+\subsection{Results}
+
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\linewidth]{images/ass5_properties_plot}
+		\caption{Altitude vs. Particle Number Density ($cm^{-3}$)}
 	\end{figure}
-	\begin{figure}[h!]
-    		\centering
-			\includegraphics[scale=0.6]{images/plasma_Beta.png}
-            \caption{Plasma Beta Variaion over Time}
-            \label{fig:magdata}
-    \end{figure}
-\clearpage
-	\subsection*{Question 1}
-    	The magnetosheath can be distinguished from the magnetosphere by finding the regions where the the ion velocity decreases and the ion density increases. These regions of the graph are where the spacecraft moves from the magnetosphere to the magnetosheath. Another way to distinguish the two is by looking at the energy of the particles, which tend to decrease when crossing from magnetosphere to magnetosheath.
-        
-%Crossings in plots: "We identify a magnetopause crossing when we see a decrease / increase of the plasma density and velocity at the same time and simultaneously an increase / decrease of the temperature."
-        
-    \subsection*{Question 2}
-     We observe 10 Magnetopause Crossings, there is a very short spike occurring between 10:35 and 10:43 that we are not taking into account as we believe it is an anomaly due to the short time and low peak height.
-     \Cref{tab:crossings} shows the timeslots during which Magnetopause crossings occur.
-     
-\begin{table}[h!]
-\centering
-\caption{Timeslots where Magnetopause crossings occur}
-\label{tab:crossings}
-\begin{tabular}{llllllllll}
-07:10-07:13 & 07:28-07:31 & 07:43-07:46 & 08:04-08:07 & 08:22-08:25\\  08:35-08:38 & 08:52-08:56 & 10:07-10:09 & 10:21-10:23 & 11:52-11:55
-\end{tabular}
-\end{table}
-    
-\subsection*{Question 3}
-With the MVAB method, the normal for the magnetopause of each crossing was calculated. In a similar way to the first exercise, the eigenvector with respect to the smallest eigenvalue gives the normal to the magnetopause normal for each crossing.\\
-\Cref{table:xyzdata} lists the normal vectors for each crossing. Each change in polarity of the vectors indicates a crossing. The coordinate data indicates that during the daytime the satellite is in the southern hemisphere (positive $x$ and negative $z \text(and) y$). The estimated normal directions are very close to the expected value. The direction of every second crossing is the same which corroborates the validity of the data.
+The results are also looked at more closely in the
+ Discussion section.
+\subsection{Discussion}
+		Based on the densities shown in the particle density graph, it can be seen that D-layer exists between ~50-100 km. The presence of low amounts of NO ions corroborates the aforementioned statement as only a high-wavelength spectral line would be able to penetrate to this level and ionize the heavy ions. 
+		\par
+		The E-layer is somewhere between ~95-150 km. This layer consists of high amounts of $0_2^+$ and $N_2^+$ ions which are produced when x-rays and ultraviolet rays dissociate $O_2$ and $N_2$ molecules.
+		\par
+		The F layers is divided into the F1 and F2 layers. The F1 layer exists from between ~150-220 km. This can be determined by seeing the number density of electrons and $O^+$. Electron density is somewhere between $5e5$ to $5e6$ and $O^+$ density is higher due to the lighter particle floating to the higher regions. The F2 layer is between ~200-500 km. The lighter ions such as $He_+, N^+, and H^+$  exist in this layer due to their light weight.
+		\par
+		The Chapman layer differs from IRI model in displaying the number densities of particles especially in the F2 layer. These differences exist because the Chapman layer takes into account some parameters that the IRI model does not and vice versa. For example, the Chapman layer takes into account the Sun's zenith angle. In addition, the chapman layer method assumes that the radiation from sun is monochromatic, the atmosphere consists of only one gas, etc. These assumptions allow the chapman layer to create a "better density profile especially for the topside ionosphere (Jin)".
 
-\begin{table}[H]
-\centering
-\caption{Magnetopause normal vectors.}
-\begin{tabular}{ |c||c c c| }
-    \hline
-    Crossing nr. & $x$ & $y$ & $z$  \\ \hline \hline
-  1 &  0.7456 &   0.1559  &  0.6479 \\ \hline
-  2 &  0.6726  & -0.7112  & -0.2044 \\ \hline
-  3 &  0.0475 &   0.0732  &  0.9962 \\ \hline
-  4 &  0.4679  &-0.6427  & -0.6066 \\ \hline
-  5 &  0.8199 &   0.3059 &  -0.4839 \\ \hline
-  6 &  0.7188  & -0.6952  &  0.0041 \\ \hline
-  7 &  0.8354   &-0.0857  &  0.5428 \\ \hline
-  8 & -0.0848   & 0.5236  & -0.8477 \\ \hline
-  9 &  0.7445  & -0.5072  & -0.4342 \\ \hline
-  10 & -0.8436  & -0.0793  & -0.5311 \\ \hline
-   
-    \end{tabular}
-\label{table:xyzdata}
-\end{table}
 
-\subsection*{Question 4}
-   By comparing the values given in \textit{Outer Magnetospheric Boundaries: Cluster Results}(G. Paschmann et. al. (2005)) chap.8.3.3 to our values, we can see that the values we get are in the same magnitude, but have a slightly higher range. Their lowest average value of 0.01 $\mu A m^{-2}$ is comparable to our 10$^{th}$ crossing, whereas the largest average value of 0.3 $\mu A m^{-2}$ is a lot lower than our highest value of 1.5231$\mu A m^{-2}$ during crossing 7. Thus, the mean value of the average currents is 0.05$\mu A m^{-2}$, which is almost a magnitude lower than our mean value of 0.8497$\mu A m^{-2}$.
-   
-Despite this our current densities seem to be reasonable because they have a similar magnitude to the average values.
+% References
 
- \begin{table}[H]
-\centering
-\caption{absolute current density for crossings}
-\begin{tabular}{ |c||c| }
-    \hline
-    Crossing nr. & current density ($\mu Am^{-2}$)\\ \hline \hline
-  1 &  0.5186  \\ \hline
-  2 &  0.5332 \\ \hline
-  3 &  0.8980  \\ \hline
-  4 &  0.9987  \\ \hline
-  5 &  0.5080 \\ \hline
-  6 &  1.4680  \\ \hline
-  7 &  1.5231  \\ \hline
-  8 &  0.7961  \\ \hline
-  9 &  1.2408  \\ \hline
-  10 & 0.0127 \\ \hline
-   
-    \end{tabular}
-\label{table:currents}
+% http://center.shao.ac.cn/geodesy/publications/Jin_2007EPS.pdf
+% http://nova.stanford.edu/~vlf/IHY_Test/Tutorials/TheIonosphere/IonosphericMorphology.pdf
 
-\section*{Conclusion}
-In this experiment we have used matlab to analyze a set of real data from the cluster satellites. We distinguished the magnetosphere from the magnetosheath and used this information to identify when the satellite crossed from one area to the other. We also estimated the normal for the magnetopause at each crossing and compared our results to ideal results from a textbook. Finally we estimated the average current density at the crossing to be 0.8497$\mu A m^{-2}$ and compared it to typical magnetopause currents.
-\end{table}
+
+
+%\subsection{Overview}
+%\subsection{Results}
+%\todo{todo}
+%D-Layer below 90
+%
+%E 90-130
+%
+%F1-130
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=\linewidth]{images/ass5_properties_plot}	
+%	\caption{bla}
+%	\label{fig:ass5Plot}
+%\end{figure}
+%
+%
+%\subsection{Discussion}
 
