@@ -1,27 +1,33 @@
 \documentclass[12pt]{article}
 \usepackage[english]{babel}
 \usepackage{lipsum}
+\usepackage{multicol}
 \usepackage[square, numbers]{natbib}
 \bibliographystyle{plainurl}
 \usepackage{url}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
+\usepackage{bm}
 \usepackage{graphicx}
 \graphicspath{{images/}}
 \usepackage{parskip}
 \usepackage{fancyhdr}
 \usepackage{vmargin}
-\usepackage{hyperref}
 \usepackage{todonotes}
 \usepackage{textcomp}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage{float}
 \usepackage{listings}
+\usepackage[]{units}
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\usepackage{hyperref}
+\usepackage{cleveref}
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
 \setmarginsrb{2 cm}{2.5 cm}{2 cm}{2.5 cm}{1 cm}{1 cm}{1 cm}{1 cm}
 
-\title{SPENVIS Laboratory Experiment 1}
+\title{Lab 3}
 \author{A. Scharf, A. Sharma, T. C. Walford}	
 \date{\today}
 
@@ -80,11 +86,11 @@
 	\emph{Authors:}\\
 	Arthur Scharf \\
 	Aman Sharma \\
-	Thomas Walford
+	Thomas C. Walford
 
 	\vspace{2cm}
 	
-	{\large April 7, 2016}\\[2 cm]
+	{\large \today}\\[2 cm]
  
 	\vfill
 	
@@ -96,11 +102,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\tableofcontents
-\thispagestyle{empty}
-\addtocounter{page}{-1}
-\pagebreak
-\include{introduction}
+%\tableofcontents
+%\thispagestyle{empty}
+%\addtocounter{page}{-1}
+%\pagebreak
 \include{content}
 
 %\newpage
@@ -115,6 +120,7 @@
 %\include{appendix}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
